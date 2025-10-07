@@ -978,13 +978,12 @@
             loadingIndicator.style.display = 'block';
             
             try {
-                // Send email using EmailJS
-                const response = await emailjs.send('service_wms3woi', 'template_contact_us', {
+                // Send email using EmailJS with your specific template
+                const response = await emailjs.send("service_r9nfvxl","template_1v2y6cv",{
+                    title: `New Portfolio Message from ${name}`,
                     name: name,
-                    email: email,
                     message: message,
-                    title: `New message from ${name}`,
-                    reply_to: email
+                    email: email,
                 });
                 
                 if (response.status === 200) {
