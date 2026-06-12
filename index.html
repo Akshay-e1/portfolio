@@ -2,187 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chitithoti Akshaynath | Portfolio</title>
-    <!-- Tailwind CSS via CDN -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Akshaynath | AI Engineer & Full-Stack Developer</title>
+    <!-- Tailwind CSS + Font Awesome + Google Fonts + GSAP + EmailJS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- GSAP for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
-        :root {
-            --primary: #F72585;
-            --secondary: #7209B7;
-            --accent: #3F37C9;
-            --highlight: #4CC9F0;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #0c0c1d, #1a1a2e);
             color: #fff;
             overflow-x: hidden;
         }
-        
+        :root {
+            --primary: #f72585;
+            --secondary: #7209b7;
+            --accent: #4c2f7a;
+            --highlight: #4cc9f0;
+        }
         .gradient-text {
             background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--highlight));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
         .gradient-bg {
             background: linear-gradient(135deg, var(--secondary), var(--accent));
         }
-        
         .card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
+            border-radius: 24px;
             transition: all 0.3s ease;
         }
-        
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(247, 37, 133, 0.2);
             border-color: var(--primary);
         }
-        
         .btn-primary {
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 12px 28px;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(247, 37, 133, 0.4);
         }
-        
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(247, 37, 133, 0.6);
         }
-        
         .btn-secondary {
             background: transparent;
             color: var(--highlight);
             border: 2px solid var(--highlight);
-            padding: 10px 22px;
+            padding: 10px 24px;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
         .btn-secondary:hover {
             background: var(--highlight);
             color: #0c0c1d;
         }
-        
         .skill-pill {
             display: inline-block;
             background: rgba(79, 55, 201, 0.2);
             color: var(--highlight);
-            padding: 8px 16px;
-            border-radius: 50px;
+            padding: 6px 14px;
+            border-radius: 40px;
             margin: 5px;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 500;
             border: 1px solid rgba(79, 55, 201, 0.5);
             transition: all 0.3s ease;
         }
-        
         .skill-pill:hover {
             background: rgba(79, 55, 201, 0.4);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
-        
         .floating {
             animation: floating 6s ease-in-out infinite;
         }
-        
         @keyframes floating {
             0% { transform: translate(0, 0px); }
             50% { transform: translate(0, 15px); }
             100% { transform: translate(0, -0px); }
         }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(247, 37, 133, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(247, 37, 133, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(247, 37, 133, 0); }
-        }
-        
-        .glow {
-            box-shadow: 0 0 20px rgba(76, 201, 240, 0.5);
-        }
-        
         .section-title {
             position: relative;
             display: inline-block;
             margin-bottom: 40px;
         }
-        
         .section-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
             left: 0;
-            width: 60%;
+            width: 70%;
             height: 4px;
             background: linear-gradient(90deg, var(--primary), var(--highlight));
-            border-radius: 2px;
+            border-radius: 4px;
         }
-        
         .timeline-item {
             position: relative;
             padding-left: 30px;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
-        
         .timeline-item::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 5px;
+            top: 6px;
             width: 12px;
             height: 12px;
             border-radius: 50%;
             background: var(--primary);
         }
-        
         .timeline-item::after {
             content: '';
             position: absolute;
             left: 5px;
-            top: 17px;
+            top: 18px;
             width: 2px;
-            height: calc(100% + 10px);
+            height: calc(100% + 8px);
             background: var(--secondary);
         }
-        
         .timeline-item:last-child::after {
             display: none;
         }
-        
         .nav-link {
             position: relative;
             color: #fff;
@@ -190,7 +152,6 @@
             padding: 5px 0;
             transition: all 0.3s ease;
         }
-        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -201,98 +162,35 @@
             background: var(--primary);
             transition: width 0.3s ease;
         }
-        
-        .nav-link:hover::after {
+        .nav-link:hover::after, .nav-link.active::after {
             width: 100%;
         }
-        
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
         .hero-bg {
-            background: radial-gradient(circle at top right, rgba(114, 9, 183, 0.3), transparent 50%),
-                        radial-gradient(circle at bottom left, rgba(247, 37, 133, 0.3), transparent 50%);
+            background: radial-gradient(circle at top right, rgba(114, 9, 183, 0.4), transparent 60%),
+                        radial-gradient(circle at bottom left, rgba(247, 37, 133, 0.3), transparent 60%);
         }
-        
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-        
-        .shape {
-            position: absolute;
-            opacity: 0.1;
-            border-radius: 50%;
-        }
-        
-        .shape-1 {
-            width: 300px;
-            height: 300px;
-            background: var(--primary);
-            top: 10%;
-            left: 5%;
-            animation: float 15s infinite ease-in-out;
-        }
-        
-        .shape-2 {
-            width: 200px;
-            height: 200px;
-            background: var(--secondary);
-            top: 60%;
-            right: 10%;
-            animation: float 12s infinite ease-in-out;
-            animation-delay: 2s;
-        }
-        
-        .shape-3 {
-            width: 150px;
-            height: 150px;
-            background: var(--highlight);
-            bottom: 10%;
-            left: 20%;
-            animation: float 10s infinite ease-in-out;
-            animation-delay: 4s;
-        }
-        
-        @keyframes float {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -50px) rotate(120deg); }
-            66% { transform: translate(-20px, 20px) rotate(240deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-
-        /* IMPROVED: Project thumbnail styles for full visibility */
+        /* project thumbnail styles */
         .project-thumbnail-container {
             height: auto;
-            min-height: 200px;
+            min-height: 190px;
             overflow: hidden;
-            border-radius: 12px;
+            border-radius: 18px;
             margin-bottom: 1rem;
             position: relative;
             cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0,0,0,0.3);
         }
-        
         .project-thumbnail {
             width: 100%;
             height: auto;
-            max-height: 300px;
-            object-fit: contain;
-            transition: transform 0.5s ease;
-            border-radius: 8px;
+            max-height: 240px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            border-radius: 16px;
         }
-        
         .project-card:hover .project-thumbnail {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
-        
         .project-overlay {
             position: absolute;
             top: 0;
@@ -305,14 +203,11 @@
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
-            border-radius: 12px;
+            border-radius: 18px;
         }
-        
         .project-card:hover .project-overlay {
             opacity: 1;
         }
-
-        /* Modal styles for full-size images */
         .modal {
             display: none;
             position: fixed;
@@ -321,708 +216,329 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            animation: fadeIn 0.3s;
+            background-color: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
         }
-        
         .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(247, 37, 133, 0.5);
-            object-fit: contain;
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 16px;
+            box-shadow: 0 0 30px rgba(247, 37, 133, 0.6);
         }
-        
         .close-modal {
             position: absolute;
-            top: 20px;
-            right: 35px;
+            top: 25px;
+            right: 40px;
             color: #fff;
-            font-size: 40px;
+            font-size: 45px;
             font-weight: bold;
             cursor: pointer;
-            transition: color 0.3s;
-            z-index: 1001;
+            transition: 0.2s;
         }
-        
-        .close-modal:hover {
-            color: var(--primary);
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Updated skills section without progress bars */
-        .skill-category {
-            margin-bottom: 2rem;
-        }
-        
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        /* Success message styles */
-        .success-message {
+        .close-modal:hover { color: var(--primary); }
+        .success-message, .error-message, .loading {
             display: none;
-            background: rgba(34, 197, 94, 0.2);
-            border: 1px solid rgba(34, 197, 94, 0.5);
-            color: #4ade80;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-top: 16px;
-            text-align: center;
         }
-
-        .error-message {
-            display: none;
-            background: rgba(239, 68, 68, 0.2);
-            border: 1px solid rgba(239, 68, 68, 0.5);
-            color: #f87171;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-top: 16px;
-            text-align: center;
-        }
-
-        .loading {
-            display: none;
-            text-align: center;
-            margin-top: 16px;
-        }
-
         .loading-spinner {
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            border: 3px solid rgba(255,255,255,0.2);
             border-radius: 50%;
             border-top: 3px solid var(--primary);
             width: 30px;
             height: 30px;
-            animation: spin 1s linear infinite;
+            animation: spin 0.8s linear infinite;
             margin: 0 auto;
         }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .glow {
+            box-shadow: 0 0 20px rgba(76, 201, 240, 0.4);
         }
     </style>
 </head>
-<body>
-    <!-- Floating Background Shapes -->
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
+<body class="antialiased">
+
+<!-- Navigation -->
+<nav class="fixed w-full z-50 py-4 px-6 bg-black/50 backdrop-blur-md border-b border-white/10">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-2xl font-bold gradient-text">Akshaynath</div>
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="btn-primary text-sm" id="downloadResume">
+            <i class="fas fa-download mr-2"></i> Download Resume
+        </button>
     </div>
-    
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 py-4 px-6 bg-black bg-opacity-50 backdrop-blur-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold gradient-text">Akshaynath</div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <button class="btn-primary" id="downloadResume">
-                <i class="fas fa-download mr-2"></i> Download Resume
-            </button>
-        </div>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center hero-bg pt-20">
-        <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                    <span class="gradient-text">Chitithoti</span><br>
-                    <span class="text-white">Akshaynath</span>
-                </h1>
-                <p class="text-xl text-gray-300 mb-8">
-                    Aspiring Computer Science Professional • Full-Stack Developer • AI Enthusiast
-                </p>
-                <div class="flex space-x-4">
-                    <button class="btn-primary" id="exploreWork">
-                        <i class="fas fa-rocket mr-2"></i> Explore My Work
-                    </button>
-                    <button class="btn-secondary" id="contactMe">
-                        <i class="fas fa-envelope mr-2"></i> Contact Me
-                    </button>
-                </div>
-                <div class="flex mt-10 space-x-6">
-                    <a href="https://www.linkedin.com/in/chitithoti-akshaynath/" target="_blank" class="text-2xl text-gray-400 hover:text-blue-400 transition-colors">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Akshay-e1" target="_blank" class="text-2xl text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://wa.me/919346134014" target="_blank" class="text-2xl text-gray-400 hover:text-green-500 transition-colors">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.instagram.com/mr.akshay_ch?igsh=YmIxZTh4cnY0aXg4" target="_blank" class="text-2xl text-gray-400 hover:text-pink-500 transition-colors">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative">
-                    <div class="w-80 h-80 rounded-full overflow-hidden border-4 border-white glow floating">
-                        <img src="https://raw.githubusercontent.com/Akshay-e1/portfolio/main/pic.jpg" alt="Akshaynath" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-5 -right-5 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-6 rounded-full font-bold">
-                        Available for work
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4 section-title">About Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <p class="text-gray-300 mb-6">
-                        I'm an aspiring Computer Science professional with full-stack web development experience and a strong programming foundation. Passionate about building real-world applications, exploring AI, and contributing to innovative, dynamic development teams.
-                    </p>
-                    <p class="text-gray-300 mb-6">
-                        Currently pursuing my B.Tech in Computer Science at Lakireddy Bali Reddy College Of Engineering with a CGPA of 7.41. I'm constantly learning new technologies and improving my skills to become a better developer.
-                    </p>
-                    <div class="flex items-center mb-6">
-                        <div class="mr-4 text-3xl text-green-400">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold">B.Tech Computer Science</h3>
-                            <p class="text-gray-400">LBRCE • 2022-2026 • CGPA: 7.41</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <div class="mr-4 text-3xl text-blue-400">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold">Full-Stack Developer</h3>
-                            <p class="text-gray-400">MERN Stack • Python • Java</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 gradient-text">My Interests</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="flex items-center p-4 rounded-lg bg-gray-800 bg-opacity-50">
-                            <div class="mr-4 text-2xl text-purple-500">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <span>Web Development</span>
-                        </div>
-                        <div class="flex items-center p-4 rounded-lg bg-gray-800 bg-opacity-50">
-                            <div class="mr-4 text-2xl text-blue-500">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <span>AI & Machine Learning</span>
-                        </div>
-                        <div class="flex items-center p-4 rounded-lg bg-gray-800 bg-opacity-50">
-                            <div class="mr-4 text-2xl text-green-500">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <span>Mobile Apps</span>
-                        </div>
-                        <div class="flex items-center p-4 rounded-lg bg-gray-800 bg-opacity-50">
-                            <div class="mr-4 text-2xl text-yellow-500">
-                                <i class="fas fa-paint-brush"></i>
-                            </div>
-                            <span>UI/UX Design</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-900 bg-opacity-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4 section-title">My Skills</h2>
-            <p class="text-gray-400 mb-12 max-w-2xl">
-                I've developed a diverse skill set through coursework, personal projects, and professional experience.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <div class="card p-6">
-                    <h3 class="text-2xl font-bold mb-6 gradient-text">Technical Skills</h3>
-                    <div class="skill-category">
-                        <h4 class="text-lg font-semibold mb-3 text-gray-300">Programming Languages</h4>
-                        <div class="skill-list">
-                            <span class="skill-pill">C</span>
-                            <span class="skill-pill">Python</span>
-                            <span class="skill-pill">Java</span>
-                            <span class="skill-pill">JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4 class="text-lg font-semibold mb-3 text-gray-300">Web Development</h4>
-                        <div class="skill-list">
-                            <span class="skill-pill">HTML5</span>
-                            <span class="skill-pill">CSS3</span>
-                            <span class="skill-pill">React</span>
-                            <span class="skill-pill">Node.js</span>
-                            <span class="skill-pill">Express</span>
-                            <span class="skill-pill">MongoDB</span>
-                            <span class="skill-pill">SQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4 class="text-lg font-semibold mb-3 text-gray-300">Tools & Technologies</h4>
-                        <div class="skill-list">
-                            <span class="skill-pill">Git</span>
-                            <span class="skill-pill">AWS</span>
-                            <span class="skill-pill">Tableau</span>
-                            <span class="skill-pill">Pandas</span>
-                            <span class="skill-pill">Matplotlib</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card p-6">
-                    <h3 class="text-2xl font-bold mb-6 gradient-text">Professional Skills</h3>
-                    <div class="skill-category">
-                        <h4 class="text-lg font-semibold mb-3 text-gray-300">Core Competencies</h4>
-                        <div class="skill-list">
-                            <span class="skill-pill">Problem Solving</span>
-                            <span class="skill-pill">Team Collaboration</span>
-                            <span class="skill-pill">Communication</span>
-                            <span class="skill-pill">Project Management</span>
-                            <span class="skill-pill">Critical Thinking</span>
-                            <span class="skill-pill">Adaptability</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4 class="text-lg font-semibold mb-3 text-gray-300">Development Methodologies</h4>
-                        <div class="skill-list">
-                            <span class="skill-pill">Responsive Design</span>
-                            <span class="skill-pill">UI/UX Principles</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="projects" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4 section-title">My Projects</h2>
-            <p class="text-gray-400 mb-12 max-w-2xl">
-                Here are some of the projects I've worked on that showcase my skills and passion for development.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card p-6 project-card">
-                    <div class="project-thumbnail-container" onclick="openModal('wizds-modal')">
-                        <img src="https://raw.githubusercontent.com/Akshay-e1/portfolio/refs/heads/main/1.png" alt="wizDS Project" class="project-thumbnail">
-                        <div class="project-overlay">
-                            <span class="btn-primary">View Full Size</span>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 gradient-text">wizDS — Data Structures Visualizer</h3>
-                    <p class="text-gray-400 mb-4">
-                        A visual learning platform for Data Structures and Algorithms featuring high-edge animations, live pseudocode, and step-by-step logic breakdowns.
-                    </p>
-                    <div class="flex justify-between">
-                        <a href="https://wizds.netlify.app/" target="_blank" class="text-sm text-blue-400 hover:text-blue-300">
-                            <i class="fas fa-external-link-alt mr-1"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/Akshay-e1/wizDS" target="_blank" class="text-sm text-gray-400 hover:text-white">
-                            <i class="fab fa-github mr-1"></i> Source Code
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="card p-6 project-card">
-                    <div class="project-thumbnail-container" onclick="openModal('budget-modal')">
-                        <img src="https://raw.githubusercontent.com/Akshay-e1/portfolio/refs/heads/main/2.png" alt="Smart Budget Planner" class="project-thumbnail">
-                        <div class="project-overlay">
-                            <span class="btn-primary">View Full Size</span>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 gradient-text">Smart-Budget-Planner</h3>
-                    <p class="text-gray-400 mb-4">
-                        Expense tracker built with React and Tailwind, dynamic charts using Chart.js, and PDF export using html2canvas + jsPDF.
-                    </p>
-                    <div class="flex justify-between">
-                        <a href="https://akshay-e1.github.io/Smart-Budget-Planner/" target="_blank" class="text-sm text-blue-400 hover:text-blue-300">
-                            <i class="fas fa-external-link-alt mr-1"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/Akshay-e1/Smart-Budget-Planner" target="_blank" class="text-sm text-gray-400 hover:text-white">
-                            <i class="fab fa-github mr-1"></i> Source Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-900 bg-opacity-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4 section-title">Experience & Education</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 gradient-text">Work Experience</h3>
-                    
-                    <div class="timeline-item">
-                        <h4 class="text-xl font-bold">MERN Stack Developer Intern</h4>
-                        <p class="text-purple-400 mb-2">Bitzron Softech • 2024</p>
-                        <ul class="text-gray-400 list-disc pl-5">
-                            <li>Implemented user authentication and authorization with registration, login, and password management</li>
-                            <li>Developed RESTful APIs for core features like posting, liking, commenting, and following</li>
-                            <li>Integrated MongoDB to store user data, posts, and other application content</li>
-                        </ul>
-                    </div>
-                    
-                    <h3 class="text-2xl font-bold mb-6 gradient-text mt-12">Achievements</h3>
-                    
-                    <div class="timeline-item">
-                        <h4 class="text-xl font-bold">3rd Prize Winner at Technothon 2.0 (OXI-MAXI)</h4>
-                        <p class="text-purple-400 mb-2">LBRCE</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h4 class="text-xl font-bold">Participated in TECHNIZEN</h4>
-                        <p class="text-purple-400 mb-2">RVR & JC College of Engineering</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h4 class="text-xl font-bold">Certificate of participation in Sports (Cricket)</h4>
-                        <p class="text-purple-400 mb-2">LBRCE</p>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 gradient-text">Education</h3>
-                    
-                    <div class="timeline-item">
-                        <h4 class="text-xl font-bold">Bachelor of Technology — Computer Science</h4>
-                        <p class="text-purple-400 mb-2">Lakireddy Bali Reddy College Of Engineering • 2022-2026</p>
-                        <p class="text-gray-400">CGPA: 7.41</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h4 class="text-xl font-bold">Board of Intermediate Education</h4>
-                        <p class="text-purple-400 mb-2">Sri Chaitanya Junior College • 2020-2022</p>
-                        <p class="text-gray-400">CGPA: 6.43</p>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <h4 class="text-xl font-bold">Board of Secondary Education</h4>
-                        <p class="text-purple-400 mb-2">Dr KKR Gowtham International School • 2019-2020</p>
-                        <p class="text-gray-400">CGPA: 10.0</p>
-                    </div>
-                    
-                    <h3 class="text-2xl font-bold mb-6 gradient-text mt-12">Certifications</h3>
-                    
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill">AWS Cloud Practitioner</span>
-                        <span class="skill-pill">TechA MERN Stack Certification</span>
-                        <span class="skill-pill">SalesForce AI Associate</span>
-                        <span class="skill-pill">E-box C Programming</span>
-                        <span class="skill-pill">PCAP - Python Essentials</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4 section-title">Get In Touch</h2>
-            <p class="text-gray-400 mb-12 max-w-2xl">
-                I'm always open to discussing new opportunities, creative ideas, or opportunities to be part of your vision.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 gradient-text">Contact Information</h3>
-                    
-                    <div class="flex items-center mb-6">
-                        <div class="mr-4 text-2xl text-purple-500">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <p class="text-gray-400">Phone</p>
-                            <p class="text-white">+91 9346134014</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center mb-6">
-                        <div class="mr-4 text-2xl text-blue-500">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <p class="text-gray-400">Email</p>
-                            <p class="text-white">akshaynathcse029@gmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-center mb-6">
-                        <div class="mr-4 text-2xl text-green-500">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <p class="text-gray-400">Location</p>
-                            <p class="text-white">Ongole, Prakasam dist, Andhra Pradesh, India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex space-x-4 mt-8">
-                        <a href="https://www.linkedin.com/in/chitithoti-akshaynath/" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/Akshay-e1" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://wa.me/919346134014" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-green-500 transition-colors">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://www.instagram.com/mr.akshay_ch?igsh=YmIxZTh4cnY0aXg4" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 gradient-text">Send Me a Message</h3>
-                    <form id="contactForm">
-                        <div class="mb-4">
-                            <label class="block text-gray-400 mb-2" for="name">Your Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" required>
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-gray-400 mb-2" for="email">Your Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" required>
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-gray-400 mb-2" for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary w-full" id="submitBtn">
-                            <i class="fas fa-paper-plane mr-2"></i> Send Message
-                        </button>
-                        
-                        <!-- Loading indicator -->
-                        <div class="loading" id="loadingIndicator">
-                            <div class="loading-spinner"></div>
-                            <p class="mt-2 text-gray-400">Sending your message...</p>
-                        </div>
-                        
-                        <!-- Success message -->
-                        <div class="success-message" id="successMessage">
-                            <i class="fas fa-check-circle mr-2"></i> Thank you! Your message has been sent successfully.
-                        </div>
-                        
-                        <!-- Error message -->
-                        <div class="error-message" id="errorMessage">
-                            <i class="fas fa-exclamation-circle mr-2"></i> Sorry, there was an error sending your message. Please try again.
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="py-8 bg-gray-900 bg-opacity-70">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-gray-400">© 2025 Chitithoti Akshaynath. All Rights Reserved.</p>
-        </div>
-    </footer>
+</nav>
 
-    <!-- Modal for full-size project images -->
-    <div id="wizds-modal" class="modal">
-        <span class="close-modal" onclick="closeModal('wizds-modal')">&times;</span>
-        <img class="modal-content" src="https://raw.githubusercontent.com/Akshay-e1/portfolio/refs/heads/main/1.png" alt="wizDS Project Full Size">
+<!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center hero-bg pt-20">
+    <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <span class="gradient-text">Chitithoti</span><br>
+                <span class="text-white">Akshaynath</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                Aspiring AI Engineer • Full-Stack Developer • Generative AI Enthusiast
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <button class="btn-primary" id="exploreWork"><i class="fas fa-rocket mr-2"></i> Explore My Work</button>
+                <button class="btn-secondary" id="contactMe"><i class="fas fa-envelope mr-2"></i> Contact Me</button>
+            </div>
+            <div class="flex mt-10 space-x-6">
+                <a href="https://www.linkedin.com/in/chitithoti-akshaynath/" target="_blank" class="text-2xl text-gray-400 hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Akshay-e1" target="_blank" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/919346134014" target="_blank" class="text-2xl text-gray-400 hover:text-green-400 transition"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/mr.akshay_ch" target="_blank" class="text-2xl text-gray-400 hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+            <div class="relative">
+                <div class="w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/70 glow floating">
+                    <img src="https://raw.githubusercontent.com/Akshay-e1/portfolio/main/pic.jpg" alt="Akshaynath" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-700 to-pink-600 text-white py-2 px-5 rounded-full font-bold text-sm whitespace-nowrap shadow-lg">
+                    Open to AI Engineer & Full-Stack Opportunities
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div id="budget-modal" class="modal">
-        <span class="close-modal" onclick="closeModal('budget-modal')">&times;</span>
-        <img class="modal-content" src="https://raw.githubusercontent.com/Akshay-e1/portfolio/refs/heads/main/2.png" alt="Smart Budget Planner Full Size">
+<!-- About Section (updated with AI focus + CGPA 7.60) -->
+<section id="about" class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-4 section-title">About Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <p class="text-gray-300 mb-5 text-lg">Aspiring AI Engineer and Full-Stack Developer with hands-on experience building AI-powered applications, intelligent chatbots, and modern web platforms. Passionate about <span class="text-purple-300 font-semibold">Generative AI, NLP, Prompt Engineering,</span> and scalable web technologies. Focused on creating innovative AI solutions that improve user experiences and solve real-world problems.</p>
+                <p class="text-gray-300 mb-6">Currently pursuing B.Tech CSE at Lakireddy Bali Reddy College of Engineering, building strong foundations in AI integration, full-stack development, and cloud technologies.</p>
+                <div class="flex items-center mb-5">
+                    <div class="mr-4 text-3xl text-green-400"><i class="fas fa-graduation-cap"></i></div>
+                    <div><h3 class="text-xl font-bold">B.Tech Computer Science</h3><p class="text-gray-400">LBRCE • 2022-2026 • <span class="text-white font-semibold">CGPA: 7.60</span></p></div>
+                </div>
+                <div class="flex items-center">
+                    <div class="mr-4 text-3xl text-blue-400"><i class="fas fa-brain"></i></div>
+                    <div><h3 class="text-xl font-bold">AI + Full-Stack Developer</h3><p class="text-gray-400">LLM Integration • Agentic AI • MERN • FastAPI</p></div>
+                </div>
+            </div>
+            <div class="card p-8">
+                <h3 class="text-2xl font-bold mb-6 gradient-text">⚡ Core Interests</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center p-3 rounded-xl bg-gray-800/40"><i class="fas fa-robot text-2xl text-purple-400 mr-3"></i><span>Generative AI</span></div>
+                    <div class="flex items-center p-3 rounded-xl bg-gray-800/40"><i class="fas fa-code-branch text-2xl text-blue-400 mr-3"></i><span>Prompt Engineering</span></div>
+                    <div class="flex items-center p-3 rounded-xl bg-gray-800/40"><i class="fas fa-globe text-2xl text-cyan-400 mr-3"></i><span>LLM Integration</span></div>
+                    <div class="flex items-center p-3 rounded-xl bg-gray-800/40"><i class="fas fa-chalkboard-user text-2xl text-yellow-400 mr-3"></i><span>AI Chatbots</span></div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <script>
-        // Initialize EmailJS with your Public Key
-        (function() {
-            emailjs.init("95saTjfOAohTQjoOE");
-        })();
+</section>
 
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Animate elements on scroll
-        gsap.utils.toArray('.card, .section-title').forEach(element => {
-            gsap.from(element, {
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none reverse"
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power2.out"
-            });
-        });
-        
-        // Nav link active state
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
+<!-- Skills Section (Updated: AI & GenAI, FastAPI, etc) -->
+<section id="skills" class="py-20 bg-gray-900/40">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-4 section-title">Technical Arsenal</h2>
+        <p class="text-gray-400 mb-12 max-w-2xl">Modern AI stacks, full-stack frameworks & cloud tools — always evolving.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="card p-7">
+                <h3 class="text-2xl font-bold mb-5 gradient-text">👨‍💻 Core Tech</h3>
+                <div class="skill-category mb-4"><h4 class="text-md font-semibold text-gray-300 mb-2">Programming Languages</h4><div class="skill-list"><span class="skill-pill">C</span><span class="skill-pill">Python</span><span class="skill-pill">Java</span><span class="skill-pill">JavaScript</span></div></div>
+                <div class="skill-category mb-4"><h4 class="text-md font-semibold text-gray-300 mb-2">🤖 AI & Generative AI</h4><div class="skill-list"><span class="skill-pill">Generative AI</span><span class="skill-pill">Prompt Engineering</span><span class="skill-pill">LLM Integration</span><span class="skill-pill">AI Chatbot Dev</span><span class="skill-pill">Agentic AI</span><span class="skill-pill">NLP</span></div></div>
+                <div class="skill-category mb-4"><h4 class="text-md font-semibold text-gray-300 mb-2">🌐 Web Development</h4><div class="skill-list"><span class="skill-pill">HTML5/CSS3</span><span class="skill-pill">React.js</span><span class="skill-pill">Node.js</span><span class="skill-pill">Express.js</span><span class="skill-pill">FastAPI</span><span class="skill-pill">Tailwind</span></div></div>
+                <div class="skill-category"><h4 class="text-md font-semibold text-gray-300 mb-2">🗄️ Database & Tools</h4><div class="skill-list"><span class="skill-pill">MySQL</span><span class="skill-pill">MongoDB</span><span class="skill-pill">GitHub</span><span class="skill-pill">VS Code</span><span class="skill-pill">AWS (Cloud Practitioner)</span></div></div>
+            </div>
+            <div class="card p-7">
+                <h3 class="text-2xl font-bold mb-5 gradient-text">🧠 AI Expertise Zone</h3>
+                <div class="bg-purple-900/20 rounded-xl p-5 border border-purple-500/30 mb-5">
+                    <div class="flex flex-wrap gap-2 mb-3"><span class="skill-pill bg-purple-800/40">Prompt Engineering</span><span class="skill-pill bg-purple-800/40">RAG Concepts</span><span class="skill-pill bg-purple-800/40">LangChain</span></div>
+                    <p class="text-gray-300 text-sm">Specialized in building AI-powered web apps, autonomous agent workflows, sentiment analysis, and LLM fine-tuning concepts.</p>
+                </div>
+                <h3 class="text-xl font-bold mb-3 gradient-text">💡 Professional Edge</h3>
+                <div class="skill-list"><span class="skill-pill">Problem Solving</span><span class="skill-pill">Team Collaboration</span><span class="skill-pill">Agile</span><span class="skill-pill">Critical Thinking</span><span class="skill-pill">REST API Design</span><span class="skill-pill">Cloud Computing</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section (reordered: DevCraftz, CRM Genie, wizDS, Budget) -->
+<section id="projects" class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-4 section-title">Featured Projects</h2>
+        <p class="text-gray-400 mb-12 max-w-2xl">AI-driven platforms, no-code builders, and full-stack solutions.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Download Resume
-        document.getElementById('downloadResume').addEventListener('click', () => {
-            window.open('https://drive.google.com/file/d/12L2RZAbRP8TAEXfsQhsRZOPkEsY_VGlw/view?usp=sharing', '_blank');
-        });
-        
-        // Explore Work button
-        document.getElementById('exploreWork').addEventListener('click', () => {
-            document.querySelector('#projects').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-        
-        // Contact Me button
-        document.getElementById('contactMe').addEventListener('click', () => {
-            document.querySelector('#contact').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+            <!-- DevCraftz Project Card -->
+            <div class="card p-6 project-card">
+                <div class="project-thumbnail-container" onclick="openModal('devcraftzModal')">
+                    <img src="https://github.com/Akshay-e1/portfolio/blob/main/dc%20dashboard.png?raw=true" alt="DevCraftz Dashboard" class="project-thumbnail">
+                    <div class="project-overlay"><span class="btn-primary text-sm">Preview Full Image</span></div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 gradient-text">DevCraftz 🚀</h3>
+                <p class="text-gray-400 text-sm mb-3">No-code website creation platform combining Full-Stack, Automation & AI-powered assistance. Users build websites, leverage IRAH AI chatbot support, and launch scalable digital presence.</p>
+                <div class="skill-list mb-4"><span class="skill-pill">React</span><span class="skill-pill">FastAPI</span><span class="skill-pill">MongoDB</span><span class="skill-pill">AI Chatbot</span><span class="skill-pill">Automation</span><span class="skill-pill">No-Code</span></div>
+                <div class="flex justify-between"><a href="https://devcraftz.in/" target="_blank" class="text-sm text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a><a href="https://github.com/Akshay-e1" target="_blank" class="text-sm text-gray-400 hover:text-white"><i class="fab fa-github mr-1"></i> GitHub</a></div>
+            </div>
 
-        // Modal functions for full-size project images
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
-        }
+            <!-- CRM Genie AI Project Card -->
+            <div class="card p-6 project-card">
+                <div class="project-thumbnail-container" onclick="openModal('crmModal')">
+                    <img src="https://github.com/Akshay-e1/portfolio/blob/main/crm%20dashboard.png?raw=true" alt="CRM Genie AI Dashboard" class="project-thumbnail">
+                    <div class="project-overlay"><span class="btn-primary text-sm">Preview Full Image</span></div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 gradient-text">CRM Genie AI 🤖</h3>
+                <p class="text-gray-400 text-sm mb-3">AI-powered Medical CRM for pharmaceutical sales reps to manage HCP interactions. Features interaction analysis, sentiment detection, automated follow-ups, conversation summarization.</p>
+                <div class="skill-list mb-4"><span class="skill-pill">FastAPI</span><span class="skill-pill">MongoDB</span><span class="skill-pill">OpenAI</span><span class="skill-pill">Prompt Engineering</span><span class="skill-pill">AI Analytics</span><span class="skill-pill">CRM</span></div>
+                <div class="flex justify-between"><a href="https://crmgenieai.netlify.app/" target="_blank" class="text-sm text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a><a href="#" class="text-sm text-gray-400 hover:text-white"><i class="fab fa-github mr-1"></i> private repo</a></div>
+            </div>
 
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
+            <!-- wizDS Project (existing) -->
+            <div class="card p-6 project-card">
+                <div class="project-thumbnail-container" onclick="openModal('wizdsModal')">
+                    <img src="https://raw.githubusercontent.com/Akshay-e1/portfolio/refs/heads/main/1.png" alt="wizDS" class="project-thumbnail">
+                    <div class="project-overlay"><span class="btn-primary text-sm">View Full Size</span></div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 gradient-text">wizDS — DSA Visualizer</h3>
+                <p class="text-gray-400 text-sm mb-3">Interactive platform for Data Structures & Algorithms with high-edge animations, live pseudocode, and step-by-step logic breakdowns.</p>
+                <div class="flex justify-between"><a href="https://wizds.netlify.app/" target="_blank" class="text-sm text-blue-400"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a><a href="https://github.com/Akshay-e1/wizDS" target="_blank" class="text-sm text-gray-400"><i class="fab fa-github mr-1"></i> Source</a></div>
+            </div>
 
-        // Close modal when clicking outside the image
-        window.onclick = function(event) {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        }
+            <!-- Smart Budget Planner (existing) -->
+            <div class="card p-6 project-card">
+                <div class="project-thumbnail-container" onclick="openModal('budgetModal')">
+                    <img src="https://raw.githubusercontent.com/Akshay-e1/portfolio/refs/heads/main/2.png" alt="Smart Budget Planner" class="project-thumbnail">
+                    <div class="project-overlay"><span class="btn-primary text-sm">View Full Size</span></div>
+                </div>
+                <h3 class="text-xl font-bold mb-2 gradient-text">Smart-Budget-Planner</h3>
+                <p class="text-gray-400 text-sm mb-3">Expense tracker with React, Chart.js analytics, PDF export using html2canvas + jsPDF, and local storage.</p>
+                <div class="flex justify-between"><a href="https://akshay-e1.github.io/Smart-Budget-Planner/" target="_blank" class="text-sm text-blue-400"><i class="fas fa-external-link-alt mr-1"></i> Live Demo</a><a href="https://github.com/Akshay-e1/Smart-Budget-Planner" target="_blank" class="text-sm text-gray-400"><i class="fab fa-github mr-1"></i> Source</a></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // Contact form submission with EmailJS
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+<!-- Experience & Education (updated CGPA, achievements, OMNITRIX win) -->
+<section id="experience" class="py-20 bg-gray-900/40">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-4 section-title">Experience & Achievements</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-6 gradient-text">💼 Work Experience</h3>
+                <div class="timeline-item">
+                    <h4 class="text-xl font-bold">MERN Stack Developer Intern</h4>
+                    <p class="text-purple-300 mb-2">Bitzon Softech • June - July 2024</p>
+                    <ul class="text-gray-400 list-disc pl-5 space-y-1 text-sm">
+                        <li>Built secure user authentication & authorization (register/login/password management).</li>
+                        <li>Designed RESTful APIs for posting, liking, commenting, follow/unfollow.</li>
+                        <li>Integrated MongoDB for scalable storage of users, posts, and content.</li>
+                    </ul>
+                </div>
+                <h3 class="text-2xl font-bold mb-5 mt-8 gradient-text">🏆 Achievements</h3>
+                <div class="timeline-item"><h4 class="text-lg font-bold">🥇 Winner – OMNITRIX 24-Hours Hackathon</h4><p class="text-purple-300">Project: DevCraftz | VR Siddhartha Engineering College</p></div>
+                <div class="timeline-item"><h4 class="text-lg font-bold">🏅 Winner – Technothon 2.0 (Project: OXI-MAXI)</h4><p class="text-purple-300">Lakireddy Bali Reddy College of Engineering</p></div>
+                <div class="timeline-item"><h4 class="text-lg font-bold">🎯 Participant – TECHNIZEN Technical Event</h4><p class="text-purple-300">RVR & JC College of Engineering</p></div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-6 gradient-text">📚 Education</h3>
+                <div class="timeline-item"><h4 class="text-lg font-bold">B.Tech Computer Science & Engineering</h4><p class="text-purple-300">LBRCE, Mylavaram • 2022-2026</p><p class="text-gray-400">CGPA: <span class="text-white font-semibold">7.60</span></p></div>
+                <div class="timeline-item"><h4 class="text-lg font-bold">Intermediate (MPC)</h4><p class="text-purple-300">Sri Chaitanya Junior College, Ongole</p><p class="text-gray-400">Percentage: 64.3%</p></div>
+                <div class="timeline-item"><h4 class="text-lg font-bold">Secondary School (SSC)</h4><p class="text-purple-300">Dr KKR Gowtham International School</p><p class="text-gray-400">Percentage: 100%</p></div>
+                <h3 class="text-2xl font-bold mb-5 mt-8 gradient-text">📜 Certifications</h3>
+                <div class="flex flex-wrap gap-2"><span class="skill-pill bg-purple-900/40">Build with Agentic AI Workshop 2026</span><span class="skill-pill">AWS Certified Cloud Practitioner 2025</span><span class="skill-pill">TechA MERN Stack 2024</span><span class="skill-pill">PCAP - Python Essentials</span><span class="skill-pill">Prompt Engineering Fundamentals</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section (unchanged but functional) -->
+<section id="contact" class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-4 section-title">Let's Connect</h2>
+        <p class="text-gray-400 mb-12 max-w-2xl">Open to AI engineer roles, freelance, or collabs — let's build something impactful.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div><h3 class="text-2xl font-bold mb-6 gradient-text">Contact Info</h3>
+                <div class="flex items-center mb-5"><div class="mr-4 text-2xl text-purple-500"><i class="fas fa-phone"></i></div><div><p class="text-gray-400">Phone</p><p class="text-white">+91 9346134014</p></div></div>
+                <div class="flex items-center mb-5"><div class="mr-4 text-2xl text-blue-400"><i class="fas fa-envelope"></i></div><div><p class="text-gray-400">Email</p><p class="text-white">akshaynathcse029@gmail.com</p></div></div>
+                <div class="flex items-center mb-5"><div class="mr-4 text-2xl text-green-400"><i class="fas fa-map-marker-alt"></i></div><div><p class="text-gray-400">Location</p><p class="text-white">Ongole, Andhra Pradesh, India</p></div></div>
+                <div class="flex space-x-4 mt-6"><a href="https://www.linkedin.com/in/chitithoti-akshaynath/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/Akshay-e1" class="w-10 h-10 rounded-full bg-gray-800 flex justify-center items-center hover:bg-gray-700"><i class="fab fa-github"></i></a><a href="https://wa.me/919346134014" class="w-10 h-10 rounded-full bg-gray-800 flex justify-center items-center hover:bg-green-500"><i class="fab fa-whatsapp"></i></a></div>
+            </div>
+            <div class="card p-8"><h3 class="text-2xl font-bold mb-5 gradient-text">Send a Message</h3>
+                <form id="contactForm"><div class="mb-4"><input type="text" id="name" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-800 rounded-xl focus:ring-2 focus:ring-purple-500" required></div>
+                <div class="mb-4"><input type="email" id="email" placeholder="Email Address" class="w-full px-4 py-3 bg-gray-800 rounded-xl" required></div>
+                <div class="mb-4"><textarea id="message" rows="4" placeholder="Your message..." class="w-full px-4 py-3 bg-gray-800 rounded-xl" required></textarea></div>
+                <button type="submit" class="btn-primary w-full" id="submitBtn"><i class="fas fa-paper-plane mr-2"></i> Send Message</button>
+                <div class="loading mt-4" id="loadingIndicator"><div class="loading-spinner"></div><p class="text-gray-400 text-sm mt-2">Sending...</p></div>
+                <div class="success-message mt-4 text-green-400 bg-green-900/30 p-3 rounded-lg text-center" id="successMessage"><i class="fas fa-check-circle"></i> Message sent successfully!</div>
+                <div class="error-message mt-4 text-red-400 bg-red-900/30 p-3 rounded-lg text-center" id="errorMessage"><i class="fas fa-exclamation-circle"></i> Failed to send. Try again.</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="py-8 border-t border-white/10 text-center text-gray-400 text-sm">© 2025 Chitithoti Akshaynath. AI Engineer • Full-Stack Innovator</footer>
+
+<!-- Modals for project images -->
+<div id="devcraftzModal" class="modal"><span class="close-modal" onclick="closeModal('devcraftzModal')">&times;</span><img class="modal-content" src="https://github.com/Akshay-e1/portfolio/blob/main/dc%20dashboard.png?raw=true" alt="DevCraftz"></div>
+<div id="crmModal" class="modal"><span class="close-modal" onclick="closeModal('crmModal')">&times;</span><img class="modal-content" src="https://github.com/Akshay-e1/portfolio/blob/main/crm%20dashboard.png?raw=true" alt="CRM Genie AI"></div>
+<div id="wizdsModal" class="modal"><span class="close-modal" onclick="closeModal('wizdsModal')">&times;</span><img class="modal-content" src="https://raw.githubusercontent.com/Akshay-e1/portfolio/refs/heads/main/1.png" alt="wizDS"></div>
+<div id="budgetModal" class="modal"><span class="close-modal" onclick="closeModal('budgetModal')">&times;</span><img class="modal-content" src="https://raw.githubusercontent.com/Akshay-e1/portfolio/refs/heads/main/2.png" alt="Budget Planner"></div>
+
+<script>
+    // EmailJS init
+    (function(){ emailjs.init("95saTjfOAohTQjoOE"); })();
+
+    // GSAP + ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.card, .section-title').forEach(el => {
+        gsap.from(el, { scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" }, y: 45, opacity: 0, duration: 0.7, ease: "power2.out" });
+    });
+
+    // smooth scroll + nav active
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            const submitBtn = document.getElementById('submitBtn');
-            const loadingIndicator = document.getElementById('loadingIndicator');
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            
-            // Hide previous messages
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-            
-            // Show loading indicator
-            submitBtn.disabled = true;
-            loadingIndicator.style.display = 'block';
-            
-            try {
-                // Send email using EmailJS with your specific template
-                const response = await emailjs.send("service_r9nfvxl","template_1v2y6cv",{
-                    title: `New Portfolio Message from ${name}`,
-                    name: name,
-                    message: message,
-                    email: email,
-                });
-                
-                if (response.status === 200) {
-                    // Show success message
-                    successMessage.style.display = 'block';
-                    
-                    // Reset form
-                    document.getElementById('contactForm').reset();
-                    
-                    // Hide success message after 5 seconds
-                    setTimeout(() => {
-                        successMessage.style.display = 'none';
-                    }, 5000);
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                console.error('EmailJS error:', error);
-                // Show error message
-                errorMessage.style.display = 'block';
-                
-                // Hide error message after 5 seconds
-                setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                }, 5000);
-            } finally {
-                // Hide loading indicator and re-enable button
-                loadingIndicator.style.display = 'none';
-                submitBtn.disabled = false;
-            }
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
         });
-    </script>
+    });
+    window.addEventListener('scroll', () => {
+        let cur = ""; 
+        document.querySelectorAll('section').forEach(sec => { if(window.scrollY >= sec.offsetTop - 200) cur = sec.getAttribute('id'); });
+        document.querySelectorAll('.nav-link').forEach(link => { link.classList.remove('active'); if(link.getAttribute('href') === `#${cur}`) link.classList.add('active'); });
+    });
+
+    document.getElementById('downloadResume').onclick = () => window.open('https://drive.google.com/file/d/12quh95lTHgc-MVKpFh8tIG7786xLwB1c/view?usp=sharing', '_blank');
+    document.getElementById('exploreWork').onclick = () => document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('contactMe').onclick = () => document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+
+    function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+    window.onclick = e => { if(e.target.classList.contains('modal')) e.target.style.display = 'none'; };
+
+    // Contact form handler
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn'), load = document.getElementById('loadingIndicator'), successDiv = document.getElementById('successMessage'), errorDiv = document.getElementById('errorMessage');
+        successDiv.style.display = 'none'; errorDiv.style.display = 'none';
+        btn.disabled = true; load.style.display = 'block';
+        try {
+            const res = await emailjs.send("service_r9nfvxl", "template_1v2y6cv", {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                title: "Portfolio Contact"
+            });
+            if(res.status === 200) { successDiv.style.display = 'block'; form.reset(); setTimeout(() => successDiv.style.display = 'none', 5000); }
+            else throw new Error();
+        } catch(err) { errorDiv.style.display = 'block'; setTimeout(() => errorDiv.style.display = 'none', 5000); }
+        finally { btn.disabled = false; load.style.display = 'none'; }
+    });
+</script>
 </body>
 </html>
